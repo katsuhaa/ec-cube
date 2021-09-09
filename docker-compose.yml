@@ -31,7 +31,7 @@ services:
       - 8080:80
       - 4430:443
     volumes:
-      - ".:/var/www/html:cached"
+      - ".:/var/        www/html:cached"
       ### 同期対象からコストの重いフォルダを除外 #####################
       - "var:/var/www/html/var"
       - "vendor:/var/www/html/vendor"

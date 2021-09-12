@@ -1,6 +1,7 @@
 FROM php:7.3-apache-stretch
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html
+ENV TZ "Asia/Tokyo"
 
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
@@ -21,6 +22,7 @@ RUN apt-get update \
     libzip-dev \
     locales \
     ssl-cert \
+    certbot \
     unzip \
     zlib1g-dev \
   && apt-get clean \
@@ -41,6 +43,8 @@ RUN mkdir -p ${APACHE_DOCUMENT_ROOT} \
   ;
 
 RUN a2enmod rewrite headers ssl
+# copy webserver setting
+COPY nachumaru-settings/apache2/sites-available/*.conf /etc/apache2/sites-available/
 # Enable SSL
 RUN ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf
 EXPOSE 443

@@ -1,0 +1,25 @@
+[Unit]
+Description=nachumaru docker-compose service
+Requires=docker.service
+
+[Service]
+Type=simple
+
+Environment=COMPOSE_FILE=/home/ubuntu/git/ec-cube/docker-compose.yml
+
+ExecStartPre=-/usr/bin/docker-compose -f ${COMPOSE_FILE} kill
+ExecStartPre=-/usr/bin/docker-compose -f ${COMPOSE_FILE} rm -v -f
+ExecStartPre=-/usr/bin/docker-compose -f ${COMPOSE_FILE} down
+
+ExecStart=/usr/bin/docker-compose -f ${COMPOSE_FILE} up --force-recreate --abort-on-container-exit
+
+ExecStop=/usr/bin/docker-compose -f ${COMPOSE_FILE} stop
+ExecStopPost=-/usr/bin/docker-compose -f ${COMPOSE_FILE} rm -v -f
+ExecStopPost=-/usr/bin/docker-compose -f ${COMPOSE_FILE} down
+
+Restart=always
+RestartSec=180s
+
+[Install]
+WantedBy=multi-user.target
+

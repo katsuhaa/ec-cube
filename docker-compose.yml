@@ -36,6 +36,9 @@ services:
       - "var:/var/www/html/var"
       - "vendor:/var/www/html/vendor"
       - "./nachumaru-data/letsencrypt:/etc/letsencrypt"
+      # カスタマイズようのディレクトリをマウント
+      - "./nachumaru-data/nadesgin/html:/var/www/html/html/template/default"
+      - "./nachumaru-data/nadesgin/app:/var/www/html/app/template/default"
     networks:
       - backend
 

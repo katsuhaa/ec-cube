@@ -40,6 +40,8 @@ services:
       - "./nachumaru-data/nadesgin/app:/var/www/html/app/template/default"
       # サイトカスタマイズ用のディレクトリをマウント
       - "./app/Customize:/var/www/html/app/Customize"
+      # 画像アップロードフォルダをマウント
+      - "./html/upload:/var/www/html/html/upload"
     networks:
       - backend
 

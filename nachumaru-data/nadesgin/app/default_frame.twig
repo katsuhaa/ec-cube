@@ -53,6 +53,7 @@ file that was distributed with this source code.
     {# プラグイン用styleseetやmetatagなど #}
     {% if plugin_assets is defined %}{{ include('@admin/snippet.twig', { snippets: plugin_assets }) }}{% endif %}
     <link rel="stylesheet" href="{{ asset('assets/css/customize.css', 'user_data') }}">
+    <meta name="google-site-verification" content="1WQr41_71SClZn5TJHsR8czUyjYMmXKVH8l14QgITAc" />
 </head>
 <body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}">
 {# Layout: BODY_AFTER #}

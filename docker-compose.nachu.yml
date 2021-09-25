@@ -5,8 +5,6 @@ networks:
     driver: bridge
 
 volumes:
-  mailcatcher-data:
-    driver: local
 
   ### ignore folder volume #####
   var:
@@ -61,11 +59,3 @@ services:
     networks:
       - backend
 
-  ### Mailcatcher ##################################
-  mailcatcher:
-    image: schickling/mailcatcher
-    ports:
-      - "1080:1080"
-      - "1025:1025"
-    networks:
-      - backend

@@ -44,7 +44,7 @@ RUN mkdir -p ${APACHE_DOCUMENT_ROOT} \
 
 RUN a2enmod rewrite headers ssl
 # copy webserver setting
-COPY nachumaru-data/apache2/sites-available/*.conf /etc/apache2/sites-available/
+#COPY nachumaru-data/apache2/sites-available/*.conf /etc/apache2/sites-available/
 # Enable SSL
 RUN ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf
 EXPOSE 443

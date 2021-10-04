@@ -34,10 +34,11 @@ services:
 
       - "./nachumaru-data/letsencrypt:/etc/letsencrypt"
       # デザインテンプレート用のディレクトリをマウント
-      - "./nachumaru-data/nadesgin/html/assets/img/na:/var/www/html/html/template/default/assets/img/na"
-      - "./nachumaru-data/nadesgin/app:/var/www/html/app/template/default"
+      - "./nachumaru-data/nadesign/html/assets/img/na:/var/www/html/html/template/default/assets/img/na"
+      - "./nachumaru-data/nadesign/app/template/default:/var/www/html/app/template/default"
       # サイトカスタマイズ用のディレクトリをマウント
-      - "./app/Customize:/var/www/html/app/Customize"
+      #     - "./app/Customize:/var/www/html/app/Customize"
+      - "./nachumaru-data/nadesign/app/Customize:/var/www/html/app/Customize"
       # 画像アップロードフォルダをマウント
       - "./html/upload:/var/www/html/html/upload"
     networks:

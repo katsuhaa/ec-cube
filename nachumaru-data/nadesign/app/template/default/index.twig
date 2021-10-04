@@ -87,6 +87,25 @@ file that was distributed with this source code.
             width: 0;
             height: 0;
         }
+        
+        #video-box {
+        position: relative;
+        max-height: 100%;
+        max-width: 100%;
+        height:100%;
+        }
+
+        .natitle {
+        margin:150px 10px;
+        position: relative;
+        max-height: 100%;
+        max-width: 100%;
+        height:100%;
+        width:100%;
+        }
+
+        
+
     </style>
 {% endblock %}
 
@@ -104,9 +123,12 @@ file that was distributed with this source code.
 {% endblock javascript %}
 
 {% block main %}
-    <div class="ec-sliderRole">
-      ahoaho
-      <video src="/nachumaru-data/assets/img/na-white.mp4" autoplay muted></video>
+    <div> 
+      <img class="natitle" src="{{ asset('assets/img/na/na-maru-black.png') }}" alt="WELLCOME NACHUMARU WINE STORE." >
+      <!-- <video class="natitle" autoplay muted playsinline> -->
+      <!--   <source src="/nachumaru-data/nadesign/html/assets/img/na/na-white.mp4"> -->
+          <!-- </video> -->
+      
       <!-- <div class="main_visual"> -->
       <!--   <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc01.jpg') }}"></div> -->
       <!--   <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc02.jpg') }}"></div> -->
@@ -114,3 +136,4 @@ file that was distributed with this source code.
       <!-- </div> -->
     </div>
 {% endblock %}
+

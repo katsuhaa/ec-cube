@@ -1,0 +1,6 @@
+services:
+  Customize\Service\OrderPdfService:
+    public: false
+    autowire: true
+    decorates: Eccube\Service\OrderPdfService
+    

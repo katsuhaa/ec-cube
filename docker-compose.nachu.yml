@@ -43,7 +43,8 @@ services:
       - "./html/upload:/var/www/html/html/upload"
     networks:
       - backend
-
+    user: 1000:1000
+    
   ### MySQL ##################################
   mysql:
     image: mysql:5.7
@@ -59,4 +60,5 @@ services:
       - 13306:3306
     networks:
       - backend
+    user: 1000:1000
 

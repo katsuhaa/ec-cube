@@ -14,98 +14,205 @@ file that was distributed with this source code.
 
 {% block stylesheet %}
     <style>
-        .slick-slider {
-            margin-bottom: 30px;
-        }
+     .slick-slider {
+         margin-bottom: 30px;
+     }
 
-        .slick-dots {
-            position: absolute;
-            bottom: -45px;
-            display: block;
-            width: 100%;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-        }
+     .slick-dots {
+         position: absolute;
+         bottom: -45px;
+         display: block;
+         width: 100%;
+         padding: 0;
+         list-style: none;
+         text-align: center;
+     }
 
-        .slick-dots li {
-            position: relative;
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin: 0 5px;
-            padding: 0;
+     .slick-dots li {
+         position: relative;
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         margin: 0 5px;
+         padding: 0;
 
-            cursor: pointer;
-        }
+         cursor: pointer;
+     }
 
-        .slick-dots li button {
-            font-size: 0;
-            line-height: 0;
-            display: block;
-            width: 20px;
-            height: 20px;
-            padding: 5px;
-            cursor: pointer;
-            color: transparent;
-            border: 0;
-            outline: none;
-            background: transparent;
-        }
+     .slick-dots li button {
+         font-size: 0;
+         line-height: 0;
+         display: block;
+         width: 20px;
+         height: 20px;
+         padding: 5px;
+         cursor: pointer;
+         color: transparent;
+         border: 0;
+         outline: none;
+         background: transparent;
+     }
 
-        .slick-dots li button:hover,
-        .slick-dots li button:focus {
-            outline: none;
-        }
+     .slick-dots li button:hover,
+     .slick-dots li button:focus {
+         outline: none;
+     }
 
-        .slick-dots li button:hover:before,
-        .slick-dots li button:focus:before {
-            opacity: 1;
-        }
+     .slick-dots li button:hover:before,
+     .slick-dots li button:focus:before {
+         opacity: 1;
+     }
 
-        .slick-dots li button:before {
-            content: " ";
-            line-height: 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 12px;
-            height: 12px;
-            text-align: center;
-            opacity: .25;
-            background-color: black;
-            border-radius: 50%;
+     .slick-dots li button:before {
+         content: " ";
+         line-height: 20px;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 12px;
+         height: 12px;
+         text-align: center;
+         opacity: .25;
+         background-color: black;
+         border-radius: 50%;
 
-        }
+     }
 
-        .slick-dots li.slick-active button:before {
-            opacity: .75;
-            background-color: black;
-        }
+     .slick-dots li.slick-active button:before {
+         opacity: .75;
+         background-color: black;
+     }
 
-        .slick-dots li button.thumbnail img {
-            width: 0;
-            height: 0;
-        }
-        
-        #video-box {
-        position: relative;
-        max-height: 100%;
-        max-width: 100%;
-        height:100%;
-        }
+     .slick-dots li button.thumbnail img {
+         width: 0;
+         height: 0;
+     }
+     
+     /* 共通の画面デザイン変更 */
+     .ec-layoutRole {
+         background-image: url("{{ asset('assets/img/na/backgound-idea2.png') }}");
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         max-width: none;
+     }
+     .ec-layoutRole .ec-layoutRole__contents {
+         max-width: none;
+     }
+     .ec-layoutRole .ec-layoutRole__contents .ec-role {
+         max-width: none;
+     }
 
-        .natitle {
-        margin:150px 10px;
-        position: relative;
-        max-height: 100%;
-        max-width: 100%;
-        height:100%;
-        width:100%;
-        }
+     /* ロゴの変更 */
+     .ec-headerRole {
+         width: 100%;
+         height: 180px;
+         margin: 180px 0px 180px 0px;
+         max-width: initial;
+         /* background-color: #1f1f1f; */
+         background-color: black;
+         position: relative;
+     }
+     .ec-headerRole__title {
+         height: 100%;
+     }
+     .ec-headerTitle {
+         height: 100%;
+     }
+     .ec-headerTitle__title {
+         height: 100%;
+     }
 
-        
+     .nachumaru_logo {
+         padding-top: 10px;
+         width: 55px;
+         margin-left:auto;
+         margin-right: auto;
+     }
+     .nachumaru_title {
+         padding-top: 35px;
+         width: 240px;
+         justify-content: space-between;
+         margin-left: auto;
+         margin-right: auto;
+     }
+     @media (min-width: 576px) {
+         .ec-headerRole {
+             height: 260px;
+         }
+         .nachumaru_logo {
+             padding-top: 20px;
+             width: 70px;
+         }
+         .nachumaru_title {
+             padding-top: 55px;
+             width: 320px;
+         }
+     }
+     @media (min-width: 768px) {
+         .ec-headerRole {
+             height: 320px;
+         }
+         .nachumaru_logo {
+             padding-top: 30px;
+             width: 70px;
+         }
+         .nachumaru_title {
+             padding-top: 85px;
+             width: 400px;
+         }
+     }
+     @media (min-width: 992px) {
+         .ec-headerRole {
+             height: 420px;
+         }
+         .nachumaru_logo {
+             padding-top: 55px;
+             width: 90px;
+         }
+         .nachumaru_title {
+             padding-top: 115px;
+             width: 550px;
+         }
+     }
+     @media (min-width: 1200px) {
+         .ec-headerRole {
+             height: 500px;
+         }
+         .nachumaru_logo {
+             padding-top: 70px;
+             width: 95px;
+         }
+         .nachumaru_title {
+             padding-top: 165px;
+             width: 550px;
+         }
+     }
+     
+     /*      新商品一覧のスタイル */
+     .ec-newItemRole .ec-newItemRole__list {
+         flex-wrap: wrap;
+         justify-content: space-evenly;
+     }
+     .ec-newItemRole .ec-newItemRole__listItem:nth-child(n) {
+         margin: 6% 3%;
+     }
+     .ec-newItemRole .ec-newItemRole__listItem {
+         max-width: 300px;
+         width: 100%;
+         padding: 1.5%;
+         background-color: rgba(247,231,192,0.8);
+         /*          background: */
+         /*              linear-gradient(217deg, rgba(247,231,192,0.8), rgba(237,213,144,0) 70.71%); */
 
+         box-shadow: 0 0 1em gray;
+     }
+     .ec-newItemRole .ec-newItemRole__listItem  > a {
+         width: 100%;
+     }
+
+     
     </style>
 {% endblock %}
 
@@ -123,8 +230,9 @@ file that was distributed with this source code.
 {% endblock javascript %}
 
 {% block main %}
-    <div> 
-      <img class="natitle" src="{{ asset('assets/img/na/na-maru-black.png') }}" alt="WELLCOME NACHUMARU WINE STORE." >
+    <div class="natitle">
+        <!-- <img src="{{ asset('assets/img/na/naback-bottle.png') }}" alt="WELLCOME NACHUMARU WINE STORE." > -->
+      <!-- <img class="natitle" src="{{ asset('assets/img/na/na-maru-black.png') }}" alt="WELLCOME NACHUMARU WINE STORE." > -->
       <!-- <video class="natitle" autoplay muted playsinline> -->
       <!--   <source src="/nachumaru-data/nadesign/html/assets/img/na/na-white.mp4"> -->
           <!-- </video> -->

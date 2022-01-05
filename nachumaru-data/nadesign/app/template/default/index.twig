@@ -189,6 +189,41 @@ file that was distributed with this source code.
              width: 550px;
          }
      }
+
+     /* 新着情報　*/
+     .ec-newsRole .ec-newsRole__news {
+         border: none;
+         background-color: black;
+         color: white;
+         height: 180px;
+     }
+     .ec-newsRole .ec-newsRole__newsDate {
+         color: white;
+     }
+     .ec-newsRole .ec-newsRole__newsTitle {
+         color: white;
+     }
+
+     @media (min-width: 576px) {
+         .ec-newsRole .ec-newsRole__news {
+             height: 260px;
+         }
+     }
+     @media (min-width: 768px) {
+         .ec-newsRole .ec-newsRole__news {
+             height: 320px;
+         }
+     }
+     @media (min-width: 992px) {
+         .ec-newsRole .ec-newsRole__news {
+             height: 420px;
+         }
+     }
+     @media (min-width: 1200px) {
+         .ec-newsRole .ec-newsRole__news {
+             height: 500px;
+         }
+     }
      
      /*      新商品一覧のスタイル */
      .ec-newItemRole .ec-newItemRole__list {
@@ -211,7 +246,6 @@ file that was distributed with this source code.
      .ec-newItemRole .ec-newItemRole__listItem  > a {
          width: 100%;
      }
-
      
     </style>
 {% endblock %}

@@ -1,0 +1,11 @@
+/* カスタマイズ用CSS */
+@media print {
+ a[href]:after {
+ content: "" !important;
+ }
+ 
+ abbr[title]:after {
+ content: "" !important;
+ }
+}
+

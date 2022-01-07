@@ -6,15 +6,24 @@ docker-composeをローカルで開発する場合の設定方法
 とりあえずdocker-compose -f docker-compose.nachu.local.ymlを起動すればOK
 ローカルの場合、何も設定していないと思うので管理画面は admin password
 
-## カスタマイズはnachumaru-dataのディレクトリ
-templateはnadesignのディレクトリにまとまっていて、本番、開発時にtemplate/defaultにマウントするようにしています。
-nadesignをtarしてデザインテンプレートにあげればデザインできるはず
-
 ## mail catcher
 送信したメールをローカルで見えるようにするツール
 localhost:1080 でアクセスして中身みる
 .envに設定があるとdocker-compose.ymlのenvironment設定がうごかいないっぽい
 
+# nachumaruでカスタマイズしてるときのエトセトラ
+## カスタマイズはnachumaru-dataのディレクトリ
+templateはnadesignのディレクトリにまとまっていて、本番、開発時にtemplate/defaultにマウントするようにしています。
+nadesignをtarしてデザインテンプレートにあげればデザインできるはず
+
+## ec-cubeの管理画面からのカスタマイズ　css jsについて
+2022/1/8
+この部分はgitで管理されているため一時的に変更はできるけどdockerの立ち上げ直しで元に戻ります。
+どうしましょう？？　
+
+## バックアップ方法をちゃんと定義しないと危ないぞ
+2022/1/8
+ec2でバックアップしているので全体は残っているけどちゃんと考えた方がいいでしょうね。
 
 
 

@@ -39,11 +39,15 @@ services:
       # サイトカスタマイズ用のディレクトリをマウント
       #     - "./app/Customize:/var/www/html/app/Customize"
       - "./nachumaru-data/nadesign/app/Customize:/var/www/html/app/Customize"
+      
       # 画像アップロードフォルダをマウント
-      - "./html/upload:/var/www/html/html/upload"
+      #- "./html/upload:/var/www/html/html/upload"
+      - "./nachumaru-data/html/upload:/var/www/html/html/upload"
+      # user_dataフォルダとマウント
+      - "./nachumaru-data/html/user_data:/var/www/html/html/user_data"
+
     networks:
       - backend
-    #user: 1000:1000
     
   ### MySQL ##################################
   mysql:

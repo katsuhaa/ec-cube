@@ -1,11 +1,13 @@
-version: "3"
+#　version: "3"
 
 networks:
   backend:
     driver: bridge
 
 volumes:
-
+  mailcatcher-data:
+    driver: local
+    
   ### ignore folder volume #####
   var:
     driver: local
@@ -28,6 +30,8 @@ services:
       - 80:80
       - 443:443
     volumes:
+      # for DEBUG
+      - ".:/var/www/html:cached"
       ### 同期対象からコストの重いフォルダを除外 #####################
       - "var:/var/www/html/var"
       - "vendor:/var/www/html/vendor"
@@ -44,7 +48,11 @@ services:
       - "./html/upload:/var/www/html/html/upload"
     networks:
       - backend
-    
+      
+    environment:
+     # EC-CUBE environments
+     MAILER_URL: "smtp://mailcatcher:1025"
+     
   ### MySQL ##################################
   mysql:
     image: mysql:5.7
@@ -61,4 +69,13 @@ services:
     networks:
       - backend
     user: 1000:1000
+
+  ### Mailcatcher ##################################
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+    networks:
+      - backend
 

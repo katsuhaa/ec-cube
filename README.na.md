@@ -10,5 +10,11 @@ docker-composeをローカルで開発する場合の設定方法
 templateはnadesignのディレクトリにまとまっていて、本番、開発時にtemplate/defaultにマウントするようにしています。
 nadesignをtarしてデザインテンプレートにあげればデザインできるはず
 
+## mail catcher
+送信したメールをローカルで見えるようにするツール
+localhost:1080 でアクセスして中身みる
+.envに設定があるとdocker-compose.ymlのenvironment設定がうごかいないっぽい
+
+
 
 

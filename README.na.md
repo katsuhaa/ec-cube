@@ -25,5 +25,21 @@ nadesignをtarしてデザインテンプレートにあげればデザインで
 2022/1/8
 ec2でバックアップしているので全体は残っているけどちゃんと考えた方がいいでしょうね。
 
+## nachumaru-webからメールを送るには
+s-nailをインストール して smtpを指定しておくる
+```
+$ sudo apt get install s-nail
+$ echo "test mail" | s-nail -s "Mail title" -S "smtp=smtp://172.31.46.184:25" -r "webmonkey@nachumaru.com" "monkey.pliers@gmail.com"
+```
+mail serverはweb serverのipアドレスを信頼させているから適当に送るので大丈夫なのですよ
+
+
+
+
+
+
+
+
+
 
 

@@ -43,11 +43,6 @@ RUN mkdir -p ${APACHE_DOCUMENT_ROOT} \
   ;
 
 RUN a2enmod rewrite headers ssl
-# copy webserver setting
-COPY nachumaru-data/apache2/sites-available/*.conf /etc/apache2/sites-available/
-# Enable SSL
-RUN ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf
-EXPOSE 443
 
 # Use the default production configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
@@ -57,6 +52,15 @@ COPY dockerbuild/php.ini $PHP_INI_DIR/conf.d/
 COPY . ${APACHE_DOCUMENT_ROOT}
 
 WORKDIR ${APACHE_DOCUMENT_ROOT}
+
+# copy webserver setting
+# Enable SSL if file exist.
+COPY nachumaru-data/letsencrypt /etc/letsencrypt
+RUN if [ -f /etc/letsencrypt/live/www.nachumaru.com/fullchain.pem ]; then \
+         cp ${APACHE_DOCUMENT_ROOT}/nachumaru-data/apache2/sites-available/*.conf /etc/apache2/sites-available/
+         ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf \
+         ; fi
+EXPOSE 443
 
 RUN curl -sS https://getcomposer.org/installer \
   | php -- --version=1.10.15 \

@@ -21,7 +21,6 @@ services:
   ec-cube:
     build:
       context: .
-      dockerfile: ./Dockerfile.nossl
       args:
         # ビルド時のECCubeインストールスクリプトをスキップする場合にtrueを指定する。
         # ビルド時点でDBサーバの起動や接続が出来ない、という場合等にエラーとなるため。
@@ -37,7 +36,6 @@ services:
       - "vendor:/var/www/html/vendor"
       - "node_modules:/var/www/html/node_modules"
 
-      - "./nachumaru-data/letsencrypt:/etc/letsencrypt"
       # デザインテンプレート用のディレクトリをマウント
       - "./nachumaru-data/nadesign/html/assets/img/na:/var/www/html/html/template/default/assets/img/na"
       - "./nachumaru-data/nadesign/app/template/default:/var/www/html/app/template/default"
@@ -50,7 +48,7 @@ services:
       - "./nachumaru-data/html/upload:/var/www/html/html/upload"
       # user_dataフォルダとマウント
       - "./nachumaru-data/html/user_data:/var/www/html/html/user_data"
-      
+
     networks:
       - backend
       

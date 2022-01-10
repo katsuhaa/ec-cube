@@ -57,8 +57,8 @@ WORKDIR ${APACHE_DOCUMENT_ROOT}
 # Enable SSL if file exist.
 COPY nachumaru-data/letsencrypt /etc/letsencrypt
 RUN if [ -f /etc/letsencrypt/live/www.nachumaru.com/fullchain.pem ]; then \
-         cp ${APACHE_DOCUMENT_ROOT}/nachumaru-data/apache2/sites-available/*.conf /etc/apache2/sites-available/
-         ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf \
+         cp ${APACHE_DOCUMENT_ROOT}/nachumaru-data/apache2/sites-available/*.conf /etc/apache2/sites-available/ \
+         && ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf \
          ; fi
 EXPOSE 443
 

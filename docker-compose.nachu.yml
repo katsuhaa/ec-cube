@@ -50,8 +50,10 @@ services:
     
   ### MySQL ##################################
   mysql:
-    image: mysql:5.7
-    platform: linux/amd64
+    # MySqlのarmイメージがないためMariaDBを使用 
+    image: mariadb:10.3
+    # image: mysql:5.7
+    # platform: linux/arm64
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: eccubedb

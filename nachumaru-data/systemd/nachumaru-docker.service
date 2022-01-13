@@ -4,7 +4,8 @@ Requires=docker.service
 
 [Service]
 Type=simple
-User=nachumaru
+User=1000
+Group=1000
 
 Environment=COMPOSE_FILE=/home/ubuntu/ec-cube/docker-compose.nachu.yml
 

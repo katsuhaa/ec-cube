@@ -51,8 +51,11 @@ services:
     
   ### MySQL ##################################
   mysql:
+    build:
+      context: .
+      dockerfile: Dockerfile.mysql
     # MySqlのarmイメージがないためMariaDBを使用 
-    image: mariadb:10.3
+    # image: mariadb:10.3
     # image: mysql:5.7
     # platform: linux/arm64
     environment:

@@ -10,21 +10,18 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-
 # database アクセス用コンフファイルの作成
-docker cp nachumaru-mysql-setconf.sh `docker-compose -f docker-compose.nachu.yml ps -q mysql`:/root/
-if [ $? -ne 0 ]; then
-    exit 1
-fi
-docker-compose -f docker-compose.nachu.yml exec -u root mysql bash /root/nachumaru-mysql-setconf.sh
+docker-compose -f docker-compose.nachu.yml exec -u root mysql bash /root/nachumaru-mysql-backupconf.sh
 if [ $? -ne 0 ]; then
     exit 1
 fi
 
-#docker-compose -f docker-compose.nachu.yml exec -u root mysql bash /root/nachumaru-mysql-backup.sh
+# database バックアップ
+docker-compose -f docker-compose.nachu.yml exec -u root mysql bash /root/nachumaru-mysql-restore.sh
 if [ $? -ne 0 ]; then
     exit 1
 fi
 
+echo "Restore complete"
 
 

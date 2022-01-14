@@ -16,6 +16,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+# database バックアップ
+docker-compose -f docker-compose.nachu.yml exec -u root mysql bash /root/nachumaru-mysql-backup.sh
+if [ $? -ne 0 ]; then
+    exit 1
+fi
+
+echo "Restore complete"
 
 
 

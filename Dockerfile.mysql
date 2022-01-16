@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 mysql:5.7
+FROM mariadb:10.4
 
 COPY nachumaru-mysql-backupconf.sh /root/
 

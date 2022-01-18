@@ -32,6 +32,7 @@ services:
       - "vendor:/var/www/html/vendor"
       - "node_modules:/var/www/html/node_modules"
 
+      - "./nachumaru-data/var/log:/var/www/html/var/log"
       # デザインテンプレート用のディレクトリをマウント
       - "./nachumaru-data/nadesign/html/assets/img/na:/var/www/html/html/template/default/assets/img/na"
       - "./nachumaru-data/nadesign/app/template/default:/var/www/html/app/template/default"

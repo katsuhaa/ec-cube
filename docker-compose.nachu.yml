@@ -46,7 +46,7 @@ services:
       # user_dataフォルダとマウント
       - "./nachumaru-data/html/user_data:/var/www/html/html/user_data"
       # s3のディレクトリをマウント
-      - "/mnt/s3:/mnt/s3"
+      - "../s3mountpoint:/mnt/s3"
     networks:
       - backend
     
@@ -66,7 +66,7 @@ services:
       MYSQL_PASSWORD: secret
     volumes:
       - "./nachumaru-data/db:/var/lib/mysql"
-      - "/mnt/s3:/mnt/s3"
+      - "../s3mountpoint:/mnt/s3"
     ports:
       - 13306:3306
     networks:

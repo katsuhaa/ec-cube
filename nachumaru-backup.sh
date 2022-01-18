@@ -1,11 +1,11 @@
 #/bin/bash -x
 # このファイルのカレントディレクトリ移動
 cd `dirname $0`
-tar -cvf /mnt/s3/nachumaru-upload.tar.bz2 nachumaru-data/html/upload
+docker-compose -f docker-compose.nachu.yml exec -u root ec-cube tar -cvf /mnt/s3/nachumaru-upload.tar.bz2 -C /var/www/html/html upload
 if [ $? -ne 0 ]; then
     exit 1
 fi
-tar -cvf /mnt/s3/nachumaru-user_data.tar.bz2 nachumaru-data/html/user_data
+docker-compose -f docker-compose.nachu.yml exec -u root ec-cube tar -cvf /mnt/s3/nachumaru-user_data.tar.bz2 -C /var/www/html/html user_data
 if [ $? -ne 0 ]; then
     exit 1
 fi
@@ -22,7 +22,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "Restore complete"
+echo "Backup complete"
 
 
 

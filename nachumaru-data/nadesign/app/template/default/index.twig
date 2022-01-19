@@ -87,196 +87,29 @@ file that was distributed with this source code.
          width: 0;
          height: 0;
      }
-     
-     /* 共通の画面デザイン変更 */
-     .ec-layoutRole {
-         background-image: url("{{ asset('assets/img/na/backgound-idea2.png') }}");
-         background-size: cover;
-         background-position: center;
-         background-repeat: no-repeat;
-         background-attachment: fixed;
-         max-width: none;
-     }
-     .ec-layoutRole .ec-layoutRole__contents {
-         max-width: none;
-     }
-     .ec-layoutRole .ec-layoutRole__contents .ec-role {
-         max-width: none;
-     }
-
-     /* ロゴの変更 */
-     .ec-headerRole {
-         width: 100%;
-         height: 180px;
-         margin: 180px 0px 180px 0px;
-         max-width: initial;
-         /* background-color: #1f1f1f; */
-         background-color: black;
-         position: relative;
-     }
-     .ec-headerRole__title {
-         height: 100%;
-     }
-     .ec-headerTitle {
-         height: 100%;
-     }
-     .ec-headerTitle__title {
-         height: 100%;
-     }
-
-     .nachumaru_logo {
-         padding-top: 10px;
-         width: 55px;
-         margin-left:auto;
-         margin-right: auto;
-     }
-     .nachumaru_title {
-         padding-top: 35px;
-         width: 240px;
-         justify-content: space-between;
-         margin-left: auto;
-         margin-right: auto;
-     }
-     @media (min-width: 576px) {
-         .ec-headerRole {
-             height: 260px;
-         }
-         .nachumaru_logo {
-             padding-top: 20px;
-             width: 70px;
-         }
-         .nachumaru_title {
-             padding-top: 55px;
-             width: 320px;
-         }
-     }
-     @media (min-width: 768px) {
-         .ec-headerRole {
-             height: 320px;
-         }
-         .nachumaru_logo {
-             padding-top: 30px;
-             width: 70px;
-         }
-         .nachumaru_title {
-             padding-top: 85px;
-             width: 400px;
-         }
-     }
-     @media (min-width: 992px) {
-         .ec-headerRole {
-             height: 420px;
-         }
-         .nachumaru_logo {
-             padding-top: 55px;
-             width: 90px;
-         }
-         .nachumaru_title {
-             padding-top: 115px;
-             width: 550px;
-         }
-     }
-     @media (min-width: 1200px) {
-         .ec-headerRole {
-             height: 500px;
-         }
-         .nachumaru_logo {
-             padding-top: 70px;
-             width: 95px;
-         }
-         .nachumaru_title {
-             padding-top: 165px;
-             width: 550px;
-         }
-     }
-
-     /* 新着情報　*/
-     .ec-newsRole .ec-newsRole__news {
-         border: none;
-         background-color: black;
-         color: white;
-         height: 180px;
-         overflow: hidden;
-     }
-     .ec-newsRole .ec-newsRole__newsDate {
-         color: white;
-     }
-     .ec-newsRole .ec-newsRole__newsTitle {
-         color: white;
-     }
-
-     @media (min-width: 576px) {
-         .ec-newsRole .ec-newsRole__news {
-             height: 260px;
-         }
-     }
-     @media (min-width: 768px) {
-         .ec-newsRole .ec-newsRole__news {
-             height: 320px;
-         }
-     }
-     @media (min-width: 992px) {
-         .ec-newsRole .ec-newsRole__news {
-             height: 420px;
-         }
-     }
-     @media (min-width: 1200px) {
-         .ec-newsRole .ec-newsRole__news {
-             height: 500px;
-         }
-     }
-     
-     /*      新商品一覧のスタイル */
-     .ec-newItemRole .ec-newItemRole__list {
-         flex-wrap: wrap;
-         justify-content: space-evenly;
-     }
-     .ec-newItemRole .ec-newItemRole__listItem:nth-child(n) {
-         margin: 6% 3%;
-     }
-     .ec-newItemRole .ec-newItemRole__listItem {
-         max-width: 300px;
-         width: 100%;
-         padding: 1.5%;
-         background-color: rgba(247,231,192,0.8);
-         /*          background: */
-         /*              linear-gradient(217deg, rgba(247,231,192,0.8), rgba(237,213,144,0) 70.71%); */
-
-         box-shadow: 0 0 1em gray;
-     }
-     .ec-newItemRole .ec-newItemRole__listItem  > a {
-         width: 100%;
-     }
-     
     </style>
 {% endblock %}
 
 {% block javascript %}
-    <script>
-        <!-- $(function() { -->
-        <!--     $('.main_visual').slick({ -->
-        <!--         dots: true, -->
-        <!--         arrows: false, -->
-        <!--         autoplay: true, -->
-        <!--         speed: 300 -->
-        <!--     }); -->
-        <!-- }); -->
-    </script>
+    <!-- <script>
+         $(function() {
+         $('.main_visual').slick({
+         dots: true,
+         arrows: false,
+         autoplay: true,
+         speed: 300
+         });
+         });
+         </script> -->
 {% endblock javascript %}
 
 {% block main %}
-    <div class="natitle">
-        <!-- <img src="{{ asset('assets/img/na/naback-bottle.png') }}" alt="WELLCOME NACHUMARU WINE STORE." > -->
-      <!-- <img class="natitle" src="{{ asset('assets/img/na/na-maru-black.png') }}" alt="WELLCOME NACHUMARU WINE STORE." > -->
-      <!-- <video class="natitle" autoplay muted playsinline> -->
-      <!--   <source src="/nachumaru-data/nadesign/html/assets/img/na/na-white.mp4"> -->
-          <!-- </video> -->
-      
-      <!-- <div class="main_visual"> -->
-      <!--   <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc01.jpg') }}"></div> -->
-      <!--   <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc02.jpg') }}"></div> -->
-      <!--   <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc03.jpg') }}"></div> -->
-      <!-- </div> -->
-    </div>
+    <!-- <div class="ec-sliderRole">
+         <div class="main_visual">
+         <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc01.jpg') }}"></div>
+         <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc02.jpg') }}"></div>
+         <div class="item slick-slide"><img src="{{ asset('assets/img/top/img_hero_pc03.jpg') }}"></div>
+         </div>
+         </div> -->
 {% endblock %}
 

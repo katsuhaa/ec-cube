@@ -35,7 +35,7 @@ services:
 
       - "./nachumaru-data/var/log:/var/www/html/var/log"
       # デザインテンプレート用のディレクトリをマウント
-      - "./nachumaru-data/nadesign/html/assets/img/na:/var/www/html/html/template/default/assets/img/na"
+      - "./nachumaru-data/nadesign/html/assets/nachu:/var/www/html/html/template/default/assets/nachu"
       - "./nachumaru-data/nadesign/app/template/default:/var/www/html/app/template/default"
       # サイトカスタマイズ用のディレクトリをマウント
       #     - "./app/Customize:/var/www/html/app/Customize"

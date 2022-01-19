@@ -1,0 +1,18 @@
+version: "3"
+services:
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql:mysql
+    ports:
+      - 18080:80
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
+    environment:
+      - PMA_HOST=mysql
+      - PMA_USER=dbuser
+      - PMA_PASSWORD=secret
+    networks:
+      - backend
+

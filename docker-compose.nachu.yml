@@ -19,6 +19,7 @@ services:
   ec-cube:
     build:
       context: .
+      dockerfile: Dockerfile.nachu
       args:
         # ビルド時のECCubeインストールスクリプトをスキップする場合にtrueを指定する。
         # ビルド時点でDBサーバの起動や接続が出来ない、という場合等にエラーとなるため。
